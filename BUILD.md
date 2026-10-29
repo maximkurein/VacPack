@@ -19,7 +19,48 @@ Windows пока выпускается как предварительная в
 | Установщик Windows | `scripts/windows.ps1 -Mode installer` | `.build/windows/Vacpack-Setup-X.Y.Z.exe` |
 | Windows-релиз: установщик, ZIP, SHA-256 | `scripts/release-windows.ps1` | `.build/dist/vX.Y.Z-windows-preview.1/` |
 
+Подробно про установщик Windows: [Windows: быстро собрать установщик](#windows-быстро-собрать-установщик).
+
 Всё собранное лежит в `.build/` и в git не попадает. Проект Xcode `Vacpack.xcodeproj` тоже не коммитится: его генерирует XcodeGen из `project.yml`.
+
+## Windows: быстро собрать установщик
+
+Из корня репозитория, в **PowerShell 7** (`pwsh`):
+
+```powershell
+cd C:\Project\vacpack
+.\scripts\windows.ps1 -Mode installer
+```
+
+Готовый файл: `.build\windows\Vacpack-Setup-X.Y.Z.exe` (версия берётся из `project.yml`). FFmpeg для сборки установщика **не нужен**: он нужен самому приложению при работе и релизным проверкам. Один раз должны стоять [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0), [PowerShell 7](https://github.com/PowerShell/PowerShell/releases) и [Inno Setup 6](https://jrsoftware.org/isdl.php); при первой сборке нужен интернет (nuget.org, runtime .NET для встраивания).
+
+Что выбрать:
+
+| Нужно | Команда | FFmpeg | Результат |
+|---|---|---|---|
+| Только установщик | `.\scripts\windows.ps1 -Mode installer` | не нужен | `.build\windows\Vacpack-Setup-X.Y.Z.exe` |
+| Папка приложения без установщика | `.\scripts\windows.ps1 -Mode package` | не нужен | `.build\windows\Vacpack\Vacpack.exe` |
+| Полный релиз: установщик, ZIP, SHA-256 | `.\scripts\release-windows.ps1` | **нужен** | `.build\dist\vX.Y.Z-windows-preview.1\` |
+
+### FFmpeg для релиза и проверок
+
+`release-windows.ps1` и `windows.ps1 -Mode check -RequireMediaTests` проверяют работу с видео, поэтому им нужны `ffmpeg.exe` и `ffprobe.exe`. Пути вида `C:\ffmpeg\bin` в примерах ниже условные: такой папки у вас может не быть.
+
+1. Установите FFmpeg (в сборку Gyan входит и `ffprobe`) и откройте **новое** окно `pwsh`, чтобы обновился `PATH`:
+   ```powershell
+   winget install Gyan.FFmpeg
+   ```
+2. Узнайте, где он лежит:
+   ```powershell
+   Split-Path (Get-Command ffmpeg).Source
+   ```
+3. Запустите релиз. Если `ffmpeg` находится через `PATH`, `-ToolsDirectory` можно не указывать; иначе подставьте путь из шага 2:
+   ```powershell
+   .\scripts\release-windows.ps1
+   .\scripts\release-windows.ps1 -ToolsDirectory 'C:\путь\к\ffmpeg\bin'
+   ```
+
+`release-windows.ps1` отказывается работать с незакоммиченными изменениями: сначала закоммитьте всё.
 
 ## Windows: подготовка и разработка
 
@@ -257,6 +298,8 @@ killall Dock
 ```
 
 **macOS: сжатый файл не появился, в строке «not smaller, so no new file»** — так и задумано: результат вышел не меньше исходника, и оригинал оставлен. Попробуйте уровень качества ниже или меньшее разрешение.
+
+**Windows: `Cannot find path 'C:\ffmpeg\bin' because it does not exist`** — в `-ToolsDirectory` указан несуществующий путь (в документации он условный). Для установщика (`-Mode installer`) FFmpeg не нужен: уберите параметр. Для `release-windows.ps1` установите FFmpeg (`winget install Gyan.FFmpeg`) и передайте реальную папку с `ffmpeg.exe` и `ffprobe.exe`, см. «FFmpeg для релиза и проверок».
 
 **Windows: `Cannot validate argument on parameter 'Mode'. The argument "installe" does not belong to the set "check;run;package;installer"`** — опечатка в имени режима. Допустимы только `check`, `run`, `package` и `installer`, целиком (см. «Режимы `windows.ps1`»). Правильная команда: `.\scripts\windows.ps1 -Mode installer`.
 
