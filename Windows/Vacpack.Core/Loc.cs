@@ -170,7 +170,6 @@ public static class Loc
         ["Перезапустить VacPack, чтобы применить язык?"] = "Restart VacPack to apply the language?",
 
         // Window: layout
-        ["Экспериментальная версия"] = "Experimental version",
         ["Сжатие фото, видео и GIF"] = "Photo, video and GIF compression",
         ["Разработчик: Kurein M.N. · "] = "Developer: Kurein M.N. · ",
         ["Открыть страницу проекта на GitHub"] = "Open the project page on GitHub",

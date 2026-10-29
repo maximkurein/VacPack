@@ -22,9 +22,8 @@ settings:
 Xcode берёт `MARKETING_VERSION` напрямую: из него `CFBundleShortVersionString` в Info.plist.
 
 Windows берёт эту же версию при сборке через `Windows/Directory.Build.props`:
-отдельно менять `.csproj` или скрипт Inno Setup не нужно. Предварительный тег может
-иметь суффикс, например `v0.4.0-windows-preview.1`, при числовой версии `0.4.0` в
-`project.yml`. Такой релиз отмечается как pre-release, пока Windows экспериментальна.
+отдельно менять `.csproj` или скрипт Inno Setup не нужно. Windows и macOS выходят под одним тегом `vX.Y.Z` и одной версией из
+`project.yml`; Windows больше не считается экспериментальной, pre-release не нужен.
 
 ## Команды
 

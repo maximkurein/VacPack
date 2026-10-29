@@ -1,6 +1,6 @@
-# VacPack для Windows — эксперимент
+# VacPack для Windows
 
-Предварительная Windows-версия живёт в каталоге `Windows/` на `main`.
+Windows-версия живёт в каталоге `Windows/` на `main`.
 Нативное окно WPF / .NET 8 и отдельный движок `Vacpack.Core`, который запускает
 FFmpeg и ffprobe без shell. Все файлы обрабатываются локально.
 
@@ -80,7 +80,7 @@ AAC, libmp3lame и libopus. HEIC и SVG в этом прототипе не пр
 месте, `Windows/Vacpack.Core/Loc.cs`: ключом служит русская строка, значением —
 английская; строка без перевода показывается по-русски.
 
-## Ограничения эксперимента
+## Ограничения
 
 Это отдельная реализация движка; Swift `CompressorKit` использует ImageIO,
 AppKit и AVFoundation и пока не переносился на Windows. Параметры H.264/VP9,
@@ -164,7 +164,7 @@ FFmpeg устанавливается отдельно; бинарники ко�
 
 Скрипт проверяет версии и все тесты, собирает установщик и ZIP из одной новой
 staging-папки и создаёт SHA-256. Для текущей версии результат лежит в
-`.build/dist/v0.4.0-windows-preview.1/`. Нужны Python 3 и Inno Setup 6.
+`.build/dist/vX.Y.Z-windows-preview.1/`. Нужны Python 3 и Inno Setup 6.
 Только `pwsh`: во встроенном Windows PowerShell 5.1 скрипт обрывается на
 `Release archive is incomplete` — тамошний `Compress-Archive` пишет имена
 записей в ZIP через обратный слеш.

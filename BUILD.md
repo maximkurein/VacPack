@@ -2,7 +2,7 @@
 
 Как собрать VacPack из исходников: приложения для Windows и macOS, CLI, тесты, установщик, ZIP и DMG.
 
-Windows пока выпускается как предварительная версия (каталог `Windows/`). Возможности и отличия — в [Windows/README.md](Windows/README.md). Сначала описана Windows-сборка, затем прежний порядок для macOS.
+Windows-версия живёт в каталоге `Windows/`. Возможности и отличия — в [Windows/README.md](Windows/README.md). Сначала описана Windows-сборка, затем прежний порядок для macOS.
 
 Связано: [README.md](README.md) · [VERSION_MANAGEMENT.md](VERSION_MANAGEMENT.md) · [CHANGELOG.md](CHANGELOG.md) · [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 
@@ -143,9 +143,9 @@ python scripts/update_version.py status
 # .\scripts\release-windows.ps1 -ToolsDirectory 'C:\ffmpeg\bin' -PythonExecutable 'C:\Python313\python.exe'
 ```
 
-Для текущего предварительного релиза версия — `0.4.0`, тег — `v0.4.0-windows-preview.1`.
-Не запускайте `bump` повторно, если версия уже подготовлена. Полный порядок и текст
-релиза — в [docs/releases/v0.4.0-windows-preview.1.md](docs/releases/v0.4.0-windows-preview.1.md).
+Текущая версия — `0.6.3`, тег — `v0.6.3` (смотрите `python scripts/update_version.py status`).
+Не запускайте `bump` повторно, если версия уже подготовлена. Пример оформления
+первого Windows-релиза — [docs/releases/v0.4.0-windows-preview.1.md](docs/releases/v0.4.0-windows-preview.1.md).
 
 `release-windows.ps1` отказывается работать с грязным Git, сверяет версии, выполняет
 все проверки, создаёт новую staging-папку, собирает установщик и ZIP из одной папки
@@ -153,8 +153,8 @@ python scripts/update_version.py status
 коммит и `sourceDirty: false`. Это исключает выпуск установщика с изменениями,
 которых нет в соответствующем теге.
 
-Публикуйте этот же тег и эти же три файла на GitHub и Forgejo с признаком
-**pre-release**, без изменения `main` и без замены стабильного `v0.3.1`.
+Публикуйте этот же тег и эти же три файла (установщик, ZIP, `SHA256SUMS.txt`) на GitHub и Forgejo
+как обычный релиз, без изменения `main`.
 Из этого Windows-релиза DMG не собирается; изменения macOS требуют проверки на Mac.
 
 ## macOS: требования

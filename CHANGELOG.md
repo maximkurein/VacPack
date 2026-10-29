@@ -6,6 +6,7 @@ Notable changes to VacPack. The format follows [Keep a Changelog](https://keepac
 
 ### Changed
 
+- Windows is no longer labelled experimental: the badge is gone from the window and the docs call it a regular version. (The strong-compression codecs stay marked experimental.)
 - The project is written VacPack and lives at github.com/maximkurein/VacPack. The brand, the window and About titles, the Help menu and the links use it; file, bundle and CLI names (`Vacpack.app`, `xyz.kurein.vacpack`, `vacpack`) stay as they were.
 
 ## [0.6.3] - 2026-10-23

@@ -1,8 +1,8 @@
 # VacPack
 
-VacPack makes images, videos and GIFs smaller, entirely offline. It has a native macOS app and CLI, and an experimental native Windows app. Like vacuum packing: everything the file does not need is pumped out.
+VacPack makes images, videos and GIFs smaller, entirely offline. It has a native macOS app and CLI, and a native Windows app. Like vacuum packing: everything the file does not need is pumped out.
 
-**Windows preview:** a self-contained x64 installer and portable ZIP, with photo/video thumbnails, a cancellable queue and local image, video, GIF and audio processing. .NET is included; FFmpeg and ffprobe are installed separately. The interface is English by default, with Russian as a choice. See [Windows/README.md](Windows/README.md) for installation and limitations, or the [0.5.1 release](https://github.com/maximkurein/VacPack/releases/tag/v0.5.1).
+**Windows:** a self-contained x64 installer and portable ZIP, with photo/video thumbnails, a cancellable queue and local image, video, GIF and audio processing. .NET is included; FFmpeg and ffprobe are installed separately. The interface is English by default, with Russian as a choice. See [Windows/README.md](Windows/README.md) for installation and limitations, or the [0.5.1 release](https://github.com/maximkurein/VacPack/releases/tag/v0.5.1).
 
 **Version:** `0.6.3`, released 23.10.2026 · [changelog](CHANGELOG.md) · [how versions are managed](VERSION_MANAGEMENT.md)
 
