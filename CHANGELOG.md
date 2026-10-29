@@ -4,6 +4,8 @@ Notable changes to VacPack. The format follows [Keep a Changelog](https://keepac
 
 ## [Unreleased]
 
+## [0.6.4] - 2026-10-29
+
 ### Changed
 
 - Windows is no longer labelled experimental: the badge is gone from the window and the docs call it a regular version. (The strong-compression codecs stay marked experimental.)
