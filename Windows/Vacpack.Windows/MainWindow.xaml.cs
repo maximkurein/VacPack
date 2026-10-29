@@ -108,7 +108,7 @@ public partial class MainWindow : Window
     {
         if (!initialized || LanguageBox.SelectedItem is not ComboBoxItem { Tag: string choice } || choice == Loc.Language) return;
         Loc.Save(choice);
-        if (MessageBox.Show(this, Loc.T("Перезапустить Vacpack, чтобы применить язык?"), "Vacpack", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes) return;
+        if (MessageBox.Show(this, Loc.T("Перезапустить VacPack, чтобы применить язык?"), "VacPack", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes) return;
         if (Environment.ProcessPath is { } executable) Process.Start(new ProcessStartInfo(executable) { UseShellExecute = false })?.Dispose();
         Close();
     }
@@ -117,7 +117,7 @@ public partial class MainWindow : Window
     {
         var dialog = new OpenFileDialog
         {
-            Title = Loc.T("Добавить файлы в Vacpack"), Multiselect = true,
+            Title = Loc.T("Добавить файлы в VacPack"), Multiselect = true,
             Filter = Loc.T("Фото, видео и GIF") + "|*.jpg;*.jpeg;*.png;*.webp;*.avif;*.tif;*.tiff;*.bmp;*.mp4;*.mov;*.mkv;*.webm;*.avi;*.m4v;*.mpeg;*.mpg;*.mts;*.m2ts;*.wmv;*.gif|" + Loc.T("Все файлы") + "|*.*"
         };
         if (dialog.ShowDialog(this) == true) AddPaths(dialog.FileNames);
@@ -450,7 +450,7 @@ public partial class MainWindow : Window
         if (e.Key == Key.Enter && CompressButton.IsEnabled) { StartCompression(sender, e); e.Handled = true; }
     }
 
-    private const string ProjectUrl = "https://github.com/kureinmaxim/vacpack";
+    private const string ProjectUrl = "https://github.com/maximkurein/VacPack";
 
     private void OpenProjectPage(object sender, RoutedEventArgs e)
     {

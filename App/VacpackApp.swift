@@ -12,13 +12,13 @@ struct VacpackApp: App {
     }
 
     var body: some Scene {
-        WindowGroup("Vacpack") {
+        WindowGroup("VacPack") {
             ContentView()
         }
         .defaultSize(width: 900, height: 600)
         .commands {
             CommandGroup(replacing: .appInfo) {
-                Button("About Vacpack") { showAboutPanel() }
+                Button("About VacPack") { showAboutPanel() }
             }
             CommandGroup(after: .appInfo) {
                 Menu("Language") {
@@ -32,7 +32,7 @@ struct VacpackApp: App {
                 }
             }
             CommandGroup(replacing: .help) {
-                Button("Vacpack on GitHub") { NSWorkspace.shared.open(ProjectLinks.repository) }
+                Button("VacPack on GitHub") { NSWorkspace.shared.open(ProjectLinks.repository) }
                 Button("Release Notes") { NSWorkspace.shared.open(ProjectLinks.changelog) }
                 Button("Report an Issue") { NSWorkspace.shared.open(ProjectLinks.issues) }
                 Divider()
@@ -54,9 +54,9 @@ struct VacpackApp: App {
     }
 }
 
-/// Where Vacpack lives on GitHub.
+/// Where VacPack lives on GitHub.
 enum ProjectLinks {
-    static let repository = URL(string: "https://github.com/kureinmaxim/vacpack")!
+    static let repository = URL(string: "https://github.com/maximkurein/VacPack")!
     static let author = URL(string: "https://github.com/kureinmaxim")!
     static let issues = repository.appending(path: "issues")
     static let changelog = repository.appending(path: "blob/main/CHANGELOG.md")
@@ -78,7 +78,7 @@ enum ProjectLinks {
             text.append(NSAttributedString(string: string, attributes: attributes))
         }
         add(String(localized: "Project: "))
-        add("github.com/kureinmaxim/vacpack", link: repository)
+        add("github.com/maximkurein/VacPack", link: repository)
         add("\n" + String(localized: "Author: "))
         add("github.com/kureinmaxim", link: author)
         if let source, !source.isEmpty {
@@ -115,7 +115,7 @@ enum InterfaceLanguage: String, CaseIterable {
         UserDefaults.standard.set(language.rawValue, forKey: key)
         UserDefaults.standard.set([language.rawValue], forKey: "AppleLanguages")
         let alert = NSAlert()
-        alert.messageText = String(localized: "Restart Vacpack to change the language?")
+        alert.messageText = String(localized: "Restart VacPack to change the language?")
         alert.addButton(withTitle: String(localized: "Restart"))
         alert.addButton(withTitle: String(localized: "Later"))
         guard alert.runModal() == .alertFirstButtonReturn else { return }

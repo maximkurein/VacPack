@@ -141,7 +141,7 @@ public static class Loc
         ["Поддерживаются JPEG, PNG, WebP, AVIF, TIFF, BMP, видео и GIF"] = "JPEG, PNG, WebP, AVIF, TIFF, BMP, video and GIF are supported",
         ["Добавлено файлов: {0}"] = "Files added: {0}",
         ["Не удалось добавить файлы: "] = "Could not add the files: ",
-        ["Добавить файлы в Vacpack"] = "Add files to Vacpack",
+        ["Добавить файлы в VacPack"] = "Add files to VacPack",
         ["Фото, видео и GIF"] = "Photos, videos and GIFs",
         ["Все файлы"] = "All files",
         ["Добавить папку с файлами"] = "Add a folder of files",
@@ -167,7 +167,7 @@ public static class Loc
         ["Исходники останутся на месте"] = "Originals stay where they are",
         ["Сэкономлено {0}  ·  {1}%"] = "Saved {0}  ·  {1}%",
         ["Файл был перемещён или удалён."] = "The file was moved or deleted.",
-        ["Перезапустить Vacpack, чтобы применить язык?"] = "Restart Vacpack to apply the language?",
+        ["Перезапустить VacPack, чтобы применить язык?"] = "Restart VacPack to apply the language?",
 
         // Window: layout
         ["Экспериментальная версия"] = "Experimental version",

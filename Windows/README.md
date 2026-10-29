@@ -1,4 +1,4 @@
-# Vacpack для Windows — эксперимент
+# VacPack для Windows — эксперимент
 
 Предварительная Windows-версия живёт в каталоге `Windows/` на `main`.
 Нативное окно WPF / .NET 8 и отдельный движок `Vacpack.Core`, который запускает

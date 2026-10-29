@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-Vacpack compresses images, videos and GIFs offline. Two independent codebases live here: a macOS app + CLI (Swift) and an experimental Windows app (C#/WPF, in `Windows/`). Project docs in `docs/` and `BUILD.md`, `VERSION_MANAGEMENT.md` and `Windows/README.md` are written in Russian.
+VacPack compresses images, videos and GIFs offline. Two independent codebases live here: a macOS app + CLI (Swift) and an experimental Windows app (C#/WPF, in `Windows/`). Project docs in `docs/` and `BUILD.md`, `VERSION_MANAGEMENT.md` and `Windows/README.md` are written in Russian.
 
 ## macOS commands
 

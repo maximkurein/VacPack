@@ -1,8 +1,12 @@
 # Changelog
 
-Notable changes to Vacpack. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [Semantic Versioning](https://semver.org/), MAJOR.MINOR.PATCH. How to release a version: [VERSION_MANAGEMENT.md](VERSION_MANAGEMENT.md).
+Notable changes to VacPack. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [Semantic Versioning](https://semver.org/), MAJOR.MINOR.PATCH. How to release a version: [VERSION_MANAGEMENT.md](VERSION_MANAGEMENT.md).
 
 ## [Unreleased]
+
+### Changed
+
+- The project is written VacPack and lives at github.com/maximkurein/VacPack. The brand, the window and About titles, the Help menu and the links use it; file, bundle and CLI names (`Vacpack.app`, `xyz.kurein.vacpack`, `vacpack`) stay as they were.
 
 ## [0.6.3] - 2026-10-23
 
@@ -97,8 +101,8 @@ Notable changes to Vacpack. The format follows [Keep a Changelog](https://keepac
 
 ### Added
 
-- About Vacpack links to the project and its author on GitHub and shows the commit the build came from and when it was pushed.
-- Help menu: Vacpack on GitHub, Release Notes, Report an Issue, Author on GitHub.
+- About VacPack links to the project and its author on GitHub and shows the commit the build came from and when it was pushed.
+- Help menu: VacPack on GitHub, Release Notes, Report an Issue, Author on GitHub.
 
 ### Changed
 
@@ -128,4 +132,4 @@ The first version: image, video and GIF compression in the app and the `vacpack`
 - A result that is not smaller never replaces the original.
 - `scripts/package.sh` builds the Release app and a drag-to-install DMG; each build gets a new build number.
 - The app icon, drawn in code.
-- One source for the version: `scripts/update_version.py`, `vacpack --version`, and the version with its release date in About Vacpack.
+- One source for the version: `scripts/update_version.py`, `vacpack --version`, and the version with its release date in About VacPack.

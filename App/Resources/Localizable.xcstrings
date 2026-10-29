@@ -23,13 +23,13 @@
         }
       }
     },
-    "About Vacpack": {
+    "About VacPack": {
       "extractionState": "manual",
       "localizations": {
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "О Vacpack"
+            "value": "О VacPack"
           }
         }
       }
@@ -628,13 +628,13 @@
         }
       }
     },
-    "Restart Vacpack to change the language?": {
+    "Restart VacPack to change the language?": {
       "extractionState": "manual",
       "localizations": {
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Перезапустить Vacpack, чтобы сменить язык?"
+            "value": "Перезапустить VacPack, чтобы сменить язык?"
           }
         }
       }
@@ -782,13 +782,13 @@
         }
       }
     },
-    "Vacpack on GitHub": {
+    "VacPack on GitHub": {
       "extractionState": "manual",
       "localizations": {
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Vacpack на GitHub"
+            "value": "VacPack на GitHub"
           }
         }
       }

@@ -1,5 +1,5 @@
 <Window x:Class="Vacpack.Windows.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:l="clr-namespace:Vacpack.Windows" Title="Vacpack — Windows"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:l="clr-namespace:Vacpack.Windows" Title="VacPack — Windows"
  Width="1100" Height="680" MinWidth="680" MinHeight="540" WindowStartupLocation="CenterScreen"
  Background="#F6F7F9" FontFamily="Segoe UI" FontSize="13" Foreground="{StaticResource Ink}"
  Icon="Resources/AppIcon.png" AllowDrop="True" DragOver="OnDragOver" DragLeave="OnDragLeave" Drop="OnDrop"
@@ -10,7 +10,7 @@
    <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
    <Image Source="Resources/AppIcon.png" Width="34" Height="34" Margin="0,0,10,0" />
    <StackPanel Grid.Column="1" VerticalAlignment="Center">
-    <TextBlock Text="Vacpack" FontSize="19" FontWeight="SemiBold" />
+    <TextBlock Text="VacPack" FontSize="19" FontWeight="SemiBold" />
     <TextBlock Text="{l:T 'Сжатие фото, видео и GIF'}" Foreground="{StaticResource Muted}" FontSize="11" Margin="0,1,0,0" />
    </StackPanel>
    <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">
@@ -25,7 +25,7 @@
      <TextBlock Text="  ·  " Style="{StaticResource Label}" FontSize="11" VerticalAlignment="Center" />
      <TextBlock Text="{l:T 'Разработчик: Kurein M.N. · '}" Style="{StaticResource Label}" FontSize="11" VerticalAlignment="Center" />
      <Button Click="OpenProjectPage" Style="{StaticResource LinkButton}" MinHeight="0" Padding="0" ToolTip="{l:T 'Открыть страницу проекта на GitHub'}" AutomationProperties.Name="{l:T 'Страница проекта на GitHub'}">
-      <TextBlock Text="github.com/kureinmaxim/vacpack" FontSize="11" Foreground="#416B94" TextDecorations="Underline" />
+      <TextBlock Text="github.com/maximkurein/VacPack" FontSize="11" Foreground="#416B94" TextDecorations="Underline" />
      </Button>
     </StackPanel>
    </StackPanel>

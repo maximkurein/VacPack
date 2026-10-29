@@ -1,21 +1,21 @@
-# Vacpack
+# VacPack
 
-Vacpack makes images, videos and GIFs smaller, entirely offline. It has a native macOS app and CLI, and an experimental native Windows app. Like vacuum packing: everything the file does not need is pumped out.
+VacPack makes images, videos and GIFs smaller, entirely offline. It has a native macOS app and CLI, and an experimental native Windows app. Like vacuum packing: everything the file does not need is pumped out.
 
-**Windows preview:** a self-contained x64 installer and portable ZIP, with photo/video thumbnails, a cancellable queue and local image, video, GIF and audio processing. .NET is included; FFmpeg and ffprobe are installed separately. The interface is English by default, with Russian as a choice. See [Windows/README.md](Windows/README.md) for installation and limitations, or the [0.5.1 release](https://github.com/kureinmaxim/vacpack/releases/tag/v0.5.1).
+**Windows preview:** a self-contained x64 installer and portable ZIP, with photo/video thumbnails, a cancellable queue and local image, video, GIF and audio processing. .NET is included; FFmpeg and ffprobe are installed separately. The interface is English by default, with Russian as a choice. See [Windows/README.md](Windows/README.md) for installation and limitations, or the [0.5.1 release](https://github.com/maximkurein/VacPack/releases/tag/v0.5.1).
 
 **Version:** `0.6.3`, released 23.10.2026 · [changelog](CHANGELOG.md) · [how versions are managed](VERSION_MANAGEMENT.md)
 
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/images/window-dark.png">
-    <img src="docs/images/window-light.png" width="760" alt="Vacpack after compressing three photos, a video and a GIF: each file shows its thumbnail, its size before and after and the share saved; the bottom bar shows 14.4 MB saved, 61%">
+    <img src="docs/images/window-light.png" width="760" alt="VacPack after compressing three photos, a video and a GIF: each file shows its thumbnail, its size before and after and the share saved; the bottom bar shows 14.4 MB saved, 61%">
   </picture>
 </p>
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/images/drop-light.png" alt="The empty window: the Vacpack icon, a dashed frame to drop files into, the kinds it handles and a Choose Files button"></td>
+    <td width="50%"><img src="docs/images/drop-light.png" alt="The empty window: the VacPack icon, a dashed frame to drop files into, the kinds it handles and a Choose Files button"></td>
     <td width="50%"><img src="docs/images/window-dark.png" alt="The same results in dark mode"></td>
   </tr>
   <tr>
@@ -37,9 +37,9 @@ Vacpack makes images, videos and GIFs smaller, entirely offline. It has a native
 
 ## Windows
 
-Download the installer or ZIP from the [0.6.3 release](https://github.com/kureinmaxim/vacpack/releases/tag/v0.6.3). Both include the .NET runtime. Install [FFmpeg for Windows](https://ffmpeg.org/download.html#build-windows) separately (the **full** build from gyan.dev has every encoder below); the app lets you choose its `bin` directory. Windows currently supports a subset of the macOS features; see [the Windows guide](Windows/README.md).
+Download the installer or ZIP from the [0.6.3 release](https://github.com/maximkurein/VacPack/releases/tag/v0.6.3). Both include the .NET runtime. Install [FFmpeg for Windows](https://ffmpeg.org/download.html#build-windows) separately (the **full** build from gyan.dev has every encoder below); the app lets you choose its `bin` directory. Windows currently supports a subset of the macOS features; see [the Windows guide](Windows/README.md).
 
-<p align="center"><img src="docs/images/window-windows.png" width="680" alt="Vacpack on Windows after compressing two photos, a video and a GIF: each file shows its thumbnail, its size before and after and the share saved; the bottom bar shows the total saved"></p>
+<p align="center"><img src="docs/images/window-windows.png" width="680" alt="VacPack on Windows after compressing two photos, a video and a GIF: each file shows its thumbnail, its size before and after and the share saved; the bottom bar shows the total saved"></p>
 
 <table>
   <tr>
@@ -64,7 +64,7 @@ Download the installer or ZIP from the [0.6.3 release](https://github.com/kurein
 brew install xcodegen ffmpeg pngquant gifski webp libavif ghostscript
 ```
 
-Vacpack runs these tools as separate programs and never links them, so their licenses apply to them alone.
+VacPack runs these tools as separate programs and never links them, so their licenses apply to them alone.
 
 ## Build and test
 
@@ -87,7 +87,7 @@ scripts/package.sh   # build Release and pack .build/dist/Vacpack-<version>.dmg
 scripts/install.sh   # install that DMG into Applications and refresh the Dock icon
 ```
 
-The app is a universal build (Apple Silicon and Intel). `install.sh` restarts the Dock, which otherwise can keep a blank cached icon after a reinstall. To install by hand instead, `scripts/package.sh --open` opens the DMG in Finder; drag **Vacpack** into **Applications**.
+The app is a universal build (Apple Silicon and Intel). `install.sh` restarts the Dock, which otherwise can keep a blank cached icon after a reinstall. To install by hand instead, `scripts/package.sh --open` opens the DMG in Finder; drag **VacPack** into **Applications**.
 
 The build is ad-hoc signed, not notarized: it opens without warnings on the Mac that built it, while on other Macs macOS blocks it until you choose **System Settings → Privacy & Security → Open Anyway**. Those Macs also need the Homebrew tools listed above.
 
@@ -114,10 +114,10 @@ swift run --package-path Packages/CompressorKit vacpack gif animation.gif --qual
 - [BUILD.md](BUILD.md) — how to build, test and package
 - [VERSION_MANAGEMENT.md](VERSION_MANAGEMENT.md) — how versions are changed and kept in sync
 
-Vacpack is an independent implementation written from scratch; it contains no code from other compression apps and is not affiliated with them.
+VacPack is an independent implementation written from scratch; it contains no code from other compression apps and is not affiliated with them.
 
 ## License
 
-Vacpack is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License version 3](LICENSE).
+VacPack is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License version 3](LICENSE).
 
 The compression tools it runs (FFmpeg, pngquant, gifski, libwebp, libavif, Ghostscript) are installed separately and keep their own licenses.

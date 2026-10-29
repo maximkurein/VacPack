@@ -1,6 +1,6 @@
-# BUILD — сборка Vacpack
+# BUILD — сборка VacPack
 
-Как собрать Vacpack из исходников: приложения для Windows и macOS, CLI, тесты, установщик, ZIP и DMG.
+Как собрать VacPack из исходников: приложения для Windows и macOS, CLI, тесты, установщик, ZIP и DMG.
 
 Windows пока выпускается как предварительная версия (каталог `Windows/`). Возможности и отличия — в [Windows/README.md](Windows/README.md). Сначала описана Windows-сборка, затем прежний порядок для macOS.
 
@@ -129,7 +129,7 @@ python scripts/update_version.py status
 ## macOS, шаг 1. Подготовить копию
 
 ```bash
-git clone https://github.com/kureinmaxim/vacpack.git
+git clone https://github.com/maximkurein/VacPack.git
 cd vacpack
 scripts/bootstrap.sh
 ```
@@ -148,7 +148,7 @@ sudo xcodebuild -runFirstLaunch
 open Vacpack.xcodeproj
 ```
 
-Схема **Vacpack**, ⌘R — запуск, ⌘U — тесты. После правки `project.yml`, а также после добавления или удаления файлов в `App/`, `AppTests/`, `UITests/` перегенерируйте проект — Xcode сам новые файлы не увидит:
+Схема **VacPack**, ⌘R — запуск, ⌘U — тесты. После правки `project.yml`, а также после добавления или удаления файлов в `App/`, `AppTests/`, `UITests/` перегенерируйте проект — Xcode сам новые файлы не увидит:
 
 ```bash
 xcodegen generate
@@ -212,13 +212,13 @@ scripts/install.sh   # поставить этот DMG в «Программы»
 1. Отказывается собирать, если версии разошлись (`update_version.py status`).
 2. `xcodegen generate` и сборка Release для arm64 и x86_64 — журнал в `.build/release-build.log`.
 3. Ставит номер сборки `CFBundleVersion` по времени UTC, например `20261018.144243`, и проверяет, что он попал в приложение.
-   Туда же пишет коммит и дату push (`VacpackSource`, `VacpackSourceDate`) — их показывает About Vacpack. Дата push берётся из журнала `origin/main`; собранное до push помечено «not pushed yet», с незакоммиченными правками — «with local changes, not committed yet».
+   Туда же пишет коммит и дату push (`VacpackSource`, `VacpackSourceDate`) — их показывает About VacPack. Дата push берётся из журнала `origin/main`; собранное до push помечено «not pushed yet», с незакоммиченными правками — «with local changes, not committed yet».
 4. Проверяет подпись (`codesign --verify --deep --strict`).
 5. Собирает DMG со ссылкой на «Программы» и проверяет его (`hdiutil verify`).
 
 В конце печатает строку вида `Created .build/dist/Vacpack-0.1.0.dmg (3.7M, version 0.1.0, build 20261018.144243, x86_64 arm64)`.
 
-**Установка на этот Mac** — `scripts/install.sh`. Он закрывает запущенный Vacpack, перекладывает прежнюю копию в Корзину (ничего не удаляет), копирует новую из DMG, заново регистрирует её в Launch Services, «забывает» копии в Корзине и перезапускает Dock. Без этого Dock может показывать пустую иконку из кэша, даже при новом номере сборки.
+**Установка на этот Mac** — `scripts/install.sh`. Он закрывает запущенный VacPack, перекладывает прежнюю копию в Корзину (ничего не удаляет), копирует новую из DMG, заново регистрирует её в Launch Services, «забывает» копии в Корзине и перезапускает Dock. Без этого Dock может показывать пустую иконку из кэша, даже при новом номере сборки.
 
 `scripts/package.sh --open` вместо этого открывает DMG в Finder — чтобы посмотреть его так, как увидят другие, и поставить вручную перетаскиванием. Для своего Mac это хуже `install.sh` (Dock не обновится), а DMG, который вы будете публиковать, в Finder лучше не открывать: однажды после этого локальный файл изменился, и его контрольная сумма перестала совпадать. Опубликованные копии остались верными, но проверяйте копию.
 

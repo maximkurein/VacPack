@@ -1,6 +1,6 @@
 # Управление версиями
 
-Как Vacpack хранит версию, как её менять и какие файлы держатся в согласии.
+Как VacPack хранит версию, как её менять и какие файлы держатся в согласии.
 
 Связано: [BUILD.md](BUILD.md) · [CHANGELOG.md](CHANGELOG.md) · [README.md](README.md)
 
@@ -62,7 +62,7 @@ Updated CHANGELOG.md
 | Метка в `status` | Файл | Что меняется |
 |---|---|---|
 | `source` | `project.yml` | `MARKETING_VERSION` и `VACPACK_RELEASE_DATE` |
-| `kit` | `Packages/CompressorKit/Sources/CompressorKit/Version.swift` | `number` и `releaseDate` — их показывают `vacpack --version` и окно About Vacpack |
+| `kit` | `Packages/CompressorKit/Sources/CompressorKit/Version.swift` | `number` и `releaseDate` — их показывают `vacpack --version` и окно About VacPack |
 | `readme` | `README.md` | строка `**Version:** …` под описанием |
 | `changelog` | `CHANGELOG.md` | заголовок `## [X.Y.Z] - YYYY-MM-DD`: новая версия забирает заметки из `## [Unreleased]`, сверху появляется пустой `Unreleased` |
 
